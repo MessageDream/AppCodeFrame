@@ -9,21 +9,23 @@
 import Alamofire
 
 class BaseHttpConnect :HttpConnectProtocol{
-    var scheme:String!
+    var scheme:HttpScheme!
     var host:String!
     var requestPath:String!
     var resquestHeads:Dictionary<String,String>?
     var requestBody:Dictionary<String,AnyObject>?
+    var responsBody:[NSData]?
     var resquestMethod:Alamofire.Method?
     var encoding:Alamofire.ParameterEncoding!
     var timeOut:NSTimeInterval = 30.0
     var errCode:Int = 0
+    var delegate:protocol<HttpConnectDelegate>?
     
     var request: Alamofire.Request!  {
         return self.setRequestByURLRequestConvertible(self.wrapRequest())
     }
     
-    init(scheme:String = "http", host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
+    init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
         self.scheme=scheme
         self.host=host
         self.requestPath=requestPath
@@ -32,7 +34,7 @@ class BaseHttpConnect :HttpConnectProtocol{
     }
     
     private  func wrapRequest()->Alamofire.URLRequestConvertible{
-        var muRequest:NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(scheme: self.scheme, host: self.host, path: self.requestPath)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: self.timeOut)
+        var muRequest:NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(scheme: self.scheme.rawValue, host: self.host, path: self.requestPath)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: self.timeOut)
         
         if let method = self.resquestMethod {
             muRequest.HTTPMethod=method.rawValue
@@ -46,6 +48,11 @@ class BaseHttpConnect :HttpConnectProtocol{
         
         var convertRequest:NSURLRequest=muRequest;
         (convertRequest, _) = self.encoding.encode(convertRequest, parameters: self.requestBody)
+        
+        if let observer = self.delegate {
+            observer.willHttpConnectRequest(self)
+        }
+        
         return convertRequest
     }
     

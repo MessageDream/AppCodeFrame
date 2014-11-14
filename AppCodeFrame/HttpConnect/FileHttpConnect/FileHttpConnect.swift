@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 jayden. All rights reserved.
 //
 import Alamofire
+
 enum FileOperation:Int{
     case Upload = 0
     case Download = 1
@@ -13,46 +14,77 @@ enum FileOperation:Int{
 
 class FileHttpConnect: BaseHttpConnect {
     var fileOperation:FileOperation!
-    var fileName:NSURL?
+    var uploadFileName:NSURL?
     var searchPathDirectory: NSSearchPathDirectory = .DocumentDirectory
     var searchPathDomain: NSSearchPathDomainMask = .UserDomainMask
     
-    /* *
-        以下两个指定构造器是为了隐藏父类的“全部参数”的指定构造器。
-    */
-    init(scheme:String, host:String, requestPath:String){
-        super.init(scheme:scheme,host:host,requestPath:requestPath)
-    }
+//    /* *
+//        以下两个指定构造器是为了隐藏父类的“全部参数”的指定构造器。
+//    */
+//    private init(scheme:HttpScheme, host:String, requestPath:String){
+//        super.init(scheme:scheme,host:host,requestPath:requestPath)
+//    }
+//    
+//    private init(host:String, requestPath:String){
+//        super.init(host:host,requestPath:requestPath)
+//    }
     
-    init(host:String, requestPath:String){
-        super.init(host:host,requestPath:requestPath)
-    }
-    
-    convenience init(scheme:String, host:String, requestPath:String,fileName:NSURL, fileOperation:FileOperation = .Download){
+     init(scheme:HttpScheme, host:String, requestPath:String,uploadFileName:NSURL? = nil, fileOperation:FileOperation = .Download){
         if fileOperation == .Download{
-            self.init(scheme:scheme,host:host,requestPath:requestPath)
+            super.init(scheme:scheme,host:host,requestPath:requestPath)
         }else{
-            self.init(scheme:scheme,host:host,requestPath:requestPath)
+            super.init(scheme:scheme,host:host,requestPath:requestPath)
         }
-        self.fileName=fileName
+        self.uploadFileName=uploadFileName
         self.fileOperation = fileOperation
     }
     
     
-    convenience init(host:String, requestPath:String,fileName:NSURL,fileOperation:FileOperation = .Download){
+     init(host:String, requestPath:String,uploadFileName:NSURL? = nil,fileOperation:FileOperation = .Download){
         if fileOperation == .Download{
-            self.init(host:host,requestPath:requestPath)
+            super.init(host:host,requestPath:requestPath)
         }else{
-            self.init(host:host,requestPath:requestPath)
+            super.init(host:host,requestPath:requestPath)
         }
-        self.fileName=fileName
+        self.uploadFileName=uploadFileName
         self.fileOperation = fileOperation
     }
+    
     
     override func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request{
         if self.fileOperation == .Download {
             return Alamofire.download(requestConver,Alamofire.Request.suggestedDownloadDestination(directory: searchPathDirectory, domain: searchPathDomain))
         }
-        return Alamofire.upload(requestConver, self.fileName!)
+        return Alamofire.upload(requestConver, uploadFileName!)
+    }
+    
+    override func send(){
+        unowned var blockSelf:BaseHttpConnect=self
+        self.request.progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) -> Void in
+//            if let observer = blockSelf.delegate {
+//                observer.httpConnectResponse(blockSelf, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
+//            }
+        }.response { (_, response, anyObject, error) -> Void in
+            if error != nil{
+              NSLog("\(error)")
+            }
+            if let er = error {
+                if let observer = blockSelf.delegate? {
+                    observer.didHttpConnectError(er.code)
+                }
+                return
+            }
+            if let res = response{
+                if let observer = blockSelf.delegate? {
+                    observer.didGetHttpConnectResponseHead(res.allHeaderFields)
+                }
+            }
+            
+            if let an: AnyObject = anyObject {
+                NSLog("\(an)")
+            }
+            
+//        blockSelf.responsBody=
+        }
     }
 }

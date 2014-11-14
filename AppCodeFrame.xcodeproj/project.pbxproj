@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B22DA4DE1A0B6AF90013BB17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA4DD1A0B6AF90013BB17 /* AppDelegate.swift */; };
-		B22DA4E01A0B6AF90013BB17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA4DF1A0B6AF90013BB17 /* ViewController.swift */; };
-		B22DA4E31A0B6AF90013BB17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22DA4E11A0B6AF90013BB17 /* Main.storyboard */; };
 		B22DA4E51A0B6AF90013BB17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22DA4E41A0B6AF90013BB17 /* Images.xcassets */; };
-		B22DA4E81A0B6AF90013BB17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22DA4E61A0B6AF90013BB17 /* LaunchScreen.xib */; };
 		B22DA4F41A0B6AF90013BB17 /* AppCodeFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA4F31A0B6AF90013BB17 /* AppCodeFrameTests.swift */; };
 		B22DA5161A0C74C50013BB17 /* BaseHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA5151A0C74C50013BB17 /* BaseHttpConnect.swift */; };
 		B22DA5211A0C8E690013BB17 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22DA51E1A0C8E3F0013BB17 /* Alamofire.framework */; };
 		B22DA52C1A0C8F840013BB17 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22DA5291A0C8F710013BB17 /* SwiftyJSON.framework */; };
+		B28312271A15EB4E006C81E0 /* HttpConnectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28312261A15EB4E006C81E0 /* HttpConnectDelegate.swift */; };
+		B28312311A161848006C81E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28312301A161848006C81E0 /* ViewController.swift */; };
+		B28312331A161899006C81E0 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28312321A161899006C81E0 /* TestView.xib */; };
 		B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */; };
 		B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */; };
 		B28A0E3D1A15DE9D003DEB3E /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */; };
@@ -63,16 +63,16 @@
 		B22DA4D81A0B6AF90013BB17 /* AppCodeFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCodeFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22DA4DC1A0B6AF90013BB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22DA4DD1A0B6AF90013BB17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B22DA4DF1A0B6AF90013BB17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B22DA4E21A0B6AF90013BB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B22DA4E41A0B6AF90013BB17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B22DA4E71A0B6AF90013BB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B22DA4ED1A0B6AF90013BB17 /* AppCodeFrameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCodeFrameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22DA4F21A0B6AF90013BB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22DA4F31A0B6AF90013BB17 /* AppCodeFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCodeFrameTests.swift; sourceTree = "<group>"; };
 		B22DA5151A0C74C50013BB17 /* BaseHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseHttpConnect.swift; path = HttpConnect/BaseHttpConnecct/BaseHttpConnect.swift; sourceTree = "<group>"; };
 		B22DA5181A0C8E3E0013BB17 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Libraries/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		B22DA5231A0C8F710013BB17 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = Libraries/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
+		B28312261A15EB4E006C81E0 /* HttpConnectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnectDelegate.swift; path = HttpConnect/HttpConnectDelegate.swift; sourceTree = "<group>"; };
+		B28312301A161848006C81E0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B28312321A161899006C81E0 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestView.xib; path = ../TestView.xib; sourceTree = "<group>"; };
 		B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnectProtocol.swift; path = HttpConnect/HttpConnectProtocol.swift; sourceTree = "<group>"; };
 		B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHttpConnect.swift; path = HttpConnect/FileHttpConnect/FileHttpConnect.swift; sourceTree = "<group>"; };
 		B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonHttpConnect.swift; path = HttpConnect/JsonHttpConnect/JsonHttpConnect.swift; sourceTree = "<group>"; };
@@ -130,10 +130,9 @@
 				B22DA4FE1A0B6D500013BB17 /* Resources */,
 				B22DA4FD1A0B6D390013BB17 /* Libraries */,
 				B22DA4DD1A0B6AF90013BB17 /* AppDelegate.swift */,
-				B22DA4DF1A0B6AF90013BB17 /* ViewController.swift */,
-				B22DA4E11A0B6AF90013BB17 /* Main.storyboard */,
+				B28312321A161899006C81E0 /* TestView.xib */,
+				B28312301A161848006C81E0 /* ViewController.swift */,
 				B22DA4E41A0B6AF90013BB17 /* Images.xcassets */,
-				B22DA4E61A0B6AF90013BB17 /* LaunchScreen.xib */,
 				B22DA4DB1A0B6AF90013BB17 /* Supporting Files */,
 			);
 			path = AppCodeFrame;
@@ -208,6 +207,7 @@
 				B28A0E371A15BF39003DEB3E /* FileHttpConnect */,
 				B28A0E3B1A15DE6E003DEB3E /* JsonHttpConnect */,
 				B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */,
+				B28312261A15EB4E006C81E0 /* HttpConnectDelegate.swift */,
 			);
 			name = HttpConnect;
 			sourceTree = "<group>";
@@ -419,8 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22DA4E31A0B6AF90013BB17 /* Main.storyboard in Resources */,
-				B22DA4E81A0B6AF90013BB17 /* LaunchScreen.xib in Resources */,
+				B28312331A161899006C81E0 /* TestView.xib in Resources */,
 				B22DA4E51A0B6AF90013BB17 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +442,8 @@
 				B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */,
 				B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */,
 				B22DA5161A0C74C50013BB17 /* BaseHttpConnect.swift in Sources */,
-				B22DA4E01A0B6AF90013BB17 /* ViewController.swift in Sources */,
+				B28312311A161848006C81E0 /* ViewController.swift in Sources */,
+				B28312271A15EB4E006C81E0 /* HttpConnectDelegate.swift in Sources */,
 				B22DA4DE1A0B6AF90013BB17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,25 +465,6 @@
 			targetProxy = B22DA4EE1A0B6AF90013BB17 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B22DA4E11A0B6AF90013BB17 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B22DA4E21A0B6AF90013BB17 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B22DA4E61A0B6AF90013BB17 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B22DA4E71A0B6AF90013BB17 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B22DA4F51A0B6AF90013BB17 /* Debug */ = {
