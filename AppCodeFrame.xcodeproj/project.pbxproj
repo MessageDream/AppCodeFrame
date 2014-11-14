@@ -13,9 +13,12 @@
 		B22DA4E51A0B6AF90013BB17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22DA4E41A0B6AF90013BB17 /* Images.xcassets */; };
 		B22DA4E81A0B6AF90013BB17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22DA4E61A0B6AF90013BB17 /* LaunchScreen.xib */; };
 		B22DA4F41A0B6AF90013BB17 /* AppCodeFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA4F31A0B6AF90013BB17 /* AppCodeFrameTests.swift */; };
-		B22DA5161A0C74C50013BB17 /* BaseHttpConnecct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA5151A0C74C50013BB17 /* BaseHttpConnecct.swift */; };
+		B22DA5161A0C74C50013BB17 /* BaseHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA5151A0C74C50013BB17 /* BaseHttpConnect.swift */; };
 		B22DA5211A0C8E690013BB17 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22DA51E1A0C8E3F0013BB17 /* Alamofire.framework */; };
 		B22DA52C1A0C8F840013BB17 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22DA5291A0C8F710013BB17 /* SwiftyJSON.framework */; };
+		B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */; };
+		B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */; };
+		B28A0E3D1A15DE9D003DEB3E /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +70,12 @@
 		B22DA4ED1A0B6AF90013BB17 /* AppCodeFrameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCodeFrameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22DA4F21A0B6AF90013BB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22DA4F31A0B6AF90013BB17 /* AppCodeFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCodeFrameTests.swift; sourceTree = "<group>"; };
-		B22DA5151A0C74C50013BB17 /* BaseHttpConnecct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseHttpConnecct.swift; path = HttpConnect/BaseHttpConnecct/BaseHttpConnecct.swift; sourceTree = "<group>"; };
+		B22DA5151A0C74C50013BB17 /* BaseHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseHttpConnect.swift; path = HttpConnect/BaseHttpConnecct/BaseHttpConnect.swift; sourceTree = "<group>"; };
 		B22DA5181A0C8E3E0013BB17 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Libraries/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		B22DA5231A0C8F710013BB17 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = Libraries/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
+		B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnectProtocol.swift; path = HttpConnect/HttpConnectProtocol.swift; sourceTree = "<group>"; };
+		B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHttpConnect.swift; path = HttpConnect/FileHttpConnect/FileHttpConnect.swift; sourceTree = "<group>"; };
+		B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonHttpConnect.swift; path = HttpConnect/JsonHttpConnect/JsonHttpConnect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				B22DA5141A0C74560013BB17 /* BaseHttpConnecct */,
+				B28A0E371A15BF39003DEB3E /* FileHttpConnect */,
+				B28A0E3B1A15DE6E003DEB3E /* JsonHttpConnect */,
+				B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */,
 			);
 			name = HttpConnect;
 			sourceTree = "<group>";
@@ -234,7 +243,7 @@
 		B22DA5141A0C74560013BB17 /* BaseHttpConnecct */ = {
 			isa = PBXGroup;
 			children = (
-				B22DA5151A0C74C50013BB17 /* BaseHttpConnecct.swift */,
+				B22DA5151A0C74C50013BB17 /* BaseHttpConnect.swift */,
 			);
 			name = BaseHttpConnecct;
 			sourceTree = "<group>";
@@ -271,6 +280,22 @@
 				B22DA52B1A0C8F710013BB17 /* SwiftyJSONTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B28A0E371A15BF39003DEB3E /* FileHttpConnect */ = {
+			isa = PBXGroup;
+			children = (
+				B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */,
+			);
+			name = FileHttpConnect;
+			sourceTree = "<group>";
+		};
+		B28A0E3B1A15DE6E003DEB3E /* JsonHttpConnect */ = {
+			isa = PBXGroup;
+			children = (
+				B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */,
+			);
+			name = JsonHttpConnect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,7 +439,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22DA5161A0C74C50013BB17 /* BaseHttpConnecct.swift in Sources */,
+				B28A0E3D1A15DE9D003DEB3E /* JsonHttpConnect.swift in Sources */,
+				B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */,
+				B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */,
+				B22DA5161A0C74C50013BB17 /* BaseHttpConnect.swift in Sources */,
 				B22DA4E01A0B6AF90013BB17 /* ViewController.swift in Sources */,
 				B22DA4DE1A0B6AF90013BB17 /* AppDelegate.swift in Sources */,
 			);
@@ -542,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppCodeFrame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -553,7 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppCodeFrame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -612,6 +640,7 @@
 				B22DA4F91A0B6AF90013BB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B22DA4FA1A0B6AF90013BB17 /* Build configuration list for PBXNativeTarget "AppCodeFrameTests" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +649,7 @@
 				B22DA4FC1A0B6AF90013BB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

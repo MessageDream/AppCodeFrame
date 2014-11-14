@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../..AppCodeFrame/Libraries/Alamofire/</string>
+		<string>../..AppCodeFrame/Libraries/Alamofire</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
-		<string>../..AppCodeFrame/Libraries/SwiftyJSON/</string>
+		<string>../..AppCodeFrame/Libraries/SwiftyJSON</string>
 		<key>FA44C840F87ABD6069545B38B039446C692D04C6</key>
 		<string>../..</string>
 	</dict>
