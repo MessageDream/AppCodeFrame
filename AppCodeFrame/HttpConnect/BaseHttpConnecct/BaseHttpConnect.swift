@@ -19,7 +19,7 @@ class BaseHttpConnect :HttpConnectProtocol{
     var encoding:Alamofire.ParameterEncoding!
     var timeOut:NSTimeInterval = 30.0
     var errCode:Int = 0
-    var delegate:protocol<HttpConnectDelegate>?
+    var delegate:HttpConnectDelegate?
     
     var request: Alamofire.Request!  {
         return self.setRequestByURLRequestConvertible(self.wrapRequest())

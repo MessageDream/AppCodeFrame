@@ -59,23 +59,20 @@ class FileHttpConnect: BaseHttpConnect {
     }
     
     override func send(){
-        unowned var blockSelf:BaseHttpConnect=self
-        self.request.progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) -> Void in
-//            if let observer = blockSelf.delegate {
-//                observer.httpConnectResponse(blockSelf, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
-//            }
-        }.response { (_, response, anyObject, error) -> Void in
-            if error != nil{
-              NSLog("\(error)")
+        self.request.progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) in
+            if let observer = self.delegate {
+                observer.httpConnectResponse(self, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
             }
+        }.response {
+            (_, response, anyObject, error) in
             if let er = error {
-                if let observer = blockSelf.delegate? {
+                if let observer = self.delegate {
                     observer.didHttpConnectError(er.code)
                 }
                 return
             }
-            if let res = response{
-                if let observer = blockSelf.delegate? {
+            if let res = response {
+                if let observer = self.delegate {
                     observer.didGetHttpConnectResponseHead(res.allHeaderFields)
                 }
             }
@@ -83,8 +80,6 @@ class FileHttpConnect: BaseHttpConnect {
             if let an: AnyObject = anyObject {
                 NSLog("\(an)")
             }
-            
-//        blockSelf.responsBody=
         }
     }
 }
