@@ -14,7 +14,7 @@ class BaseHttpConnect :HttpConnectProtocol{
     var requestPath:String!
     var resquestHeads:Dictionary<String,String>?
     var requestBody:Dictionary<String,AnyObject>?
-    var responsBody:[NSData]?
+    var responsBody:AnyObject?
     var resquestMethod:Alamofire.Method?
     var encoding:Alamofire.ParameterEncoding!
     var timeOut:NSTimeInterval = 30.0
@@ -22,7 +22,11 @@ class BaseHttpConnect :HttpConnectProtocol{
     var delegate:HttpConnectDelegate?
     
     var request: Alamofire.Request!  {
-        return self.setRequestByURLRequestConvertible(self.wrapRequest())
+        return self.setRequestByURLRequestConvertible(self.wrapRequest()).progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) in
+            if let observer = self.delegate {
+                observer.httpConnectResponse(self, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
+            }
+        }
     }
     
     init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
@@ -46,12 +50,12 @@ class BaseHttpConnect :HttpConnectProtocol{
             }
         }
         
+        if let observer = self.delegate {
+            observer.httpConnectWillRequest(self)
+        }
+        
         var convertRequest:NSURLRequest=muRequest;
         (convertRequest, _) = self.encoding.encode(convertRequest, parameters: self.requestBody)
-        
-        if let observer = self.delegate {
-            observer.willHttpConnectRequest(self)
-        }
         
         return convertRequest
     }
@@ -60,8 +64,31 @@ class BaseHttpConnect :HttpConnectProtocol{
         return Alamofire.request(requestConver)
     }
     
-    func send(){
-        
+    func send() -> Alamofire.Request{
+        return  self.request.response {(_, response, anyObject, error) in
+            if let er = error {
+                self.errCode=er.code
+                if let observer = self.delegate {
+                    observer.didHttpConnectError(er.code)
+                }
+                return
+            }
+            if let res = response {
+                if let observer = self.delegate {
+                    observer.didGetHttpConnectResponseHeads(res.allHeaderFields)
+                }
+            }else{
+                return
+            }
+            self.handleResponse(response,anyObject: anyObject)
+        }
+    }
+    
+    func handleResponse(response:NSHTTPURLResponse?,anyObject:AnyObject?){
+            self.responsBody=anyObject
+            if let observer = self.delegate {
+                observer.didHttpConnectFinish(self)
+            }
     }
     
     func cancel(){

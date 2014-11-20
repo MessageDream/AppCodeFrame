@@ -19,7 +19,7 @@ protocol HttpConnectProtocol {
     var requestPath:String!{get}
     var resquestHeads:Dictionary<String,String>?{get set}
     var requestBody:Dictionary<String,AnyObject>?{get set}
-    var responsBody:[NSData]?{get set}
+    var responsBody:AnyObject?{get}
     var resquestMethod:Alamofire.Method?{get}
     var encoding:Alamofire.ParameterEncoding!{get}
     var timeOut:NSTimeInterval{get set}
@@ -31,6 +31,6 @@ protocol HttpConnectProtocol {
 //    init(scheme:String, host:String,  requestPath:String,  resquestMethod:Alamofire.Method,  encoding:Alamofire.ParameterEncoding)
     
     func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request;
-    func send();
+    func send()-> Alamofire.Request;
     func cancel();
 }

@@ -18,7 +18,9 @@
 		B28312331A161899006C81E0 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28312321A161899006C81E0 /* TestView.xib */; };
 		B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */; };
 		B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */; };
-		B28A0E3D1A15DE9D003DEB3E /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */; };
+		B29237691A1DCE3A003D28ED /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29237681A1DCE3A003D28ED /* LogUtil.swift */; };
+		B292376B1A1DD3CE003D28ED /* BaseBuinessChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292376A1A1DD3CE003D28ED /* BaseBuinessChannel.swift */; };
+		B292376D1A1DD459003D28ED /* BuinessChannelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292376C1A1DD459003D28ED /* BuinessChannelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,10 @@
 		B28312321A161899006C81E0 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestView.xib; path = ../TestView.xib; sourceTree = "<group>"; };
 		B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnectProtocol.swift; path = HttpConnect/HttpConnectProtocol.swift; sourceTree = "<group>"; };
 		B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHttpConnect.swift; path = HttpConnect/FileHttpConnect/FileHttpConnect.swift; sourceTree = "<group>"; };
-		B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonHttpConnect.swift; path = HttpConnect/JsonHttpConnect/JsonHttpConnect.swift; sourceTree = "<group>"; };
+		B292375A1A1DB67B003D28ED /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B29237681A1DCE3A003D28ED /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = Utils/LogUtil.swift; sourceTree = "<group>"; };
+		B292376A1A1DD3CE003D28ED /* BaseBuinessChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBuinessChannel.swift; path = BusinessChannel/BaseBuinessChannel.swift; sourceTree = "<group>"; };
+		B292376C1A1DD459003D28ED /* BuinessChannelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuinessChannelProtocol.swift; path = BusinessChannel/BuinessChannelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		B22DA4CF1A0B6AF80013BB17 = {
 			isa = PBXGroup;
 			children = (
+				B292375A1A1DB67B003D28ED /* CFNetwork.framework */,
 				B22DA4DA1A0B6AF90013BB17 /* AppCodeFrame */,
 				B22DA4F01A0B6AF90013BB17 /* AppCodeFrameTests */,
 				B22DA4D91A0B6AF90013BB17 /* Products */,
@@ -182,6 +188,7 @@
 		B22DA4FF1A0B6D6F0013BB17 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B29237681A1DCE3A003D28ED /* LogUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -205,7 +212,6 @@
 			children = (
 				B22DA5141A0C74560013BB17 /* BaseHttpConnecct */,
 				B28A0E371A15BF39003DEB3E /* FileHttpConnect */,
-				B28A0E3B1A15DE6E003DEB3E /* JsonHttpConnect */,
 				B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */,
 				B28312261A15EB4E006C81E0 /* HttpConnectDelegate.swift */,
 			);
@@ -215,6 +221,8 @@
 		B22DA5031A0B6DC00013BB17 /* BusinessChannel */ = {
 			isa = PBXGroup;
 			children = (
+				B292376A1A1DD3CE003D28ED /* BaseBuinessChannel.swift */,
+				B292376C1A1DD459003D28ED /* BuinessChannelProtocol.swift */,
 			);
 			name = BusinessChannel;
 			sourceTree = "<group>";
@@ -288,14 +296,6 @@
 				B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */,
 			);
 			name = FileHttpConnect;
-			sourceTree = "<group>";
-		};
-		B28A0E3B1A15DE6E003DEB3E /* JsonHttpConnect */ = {
-			isa = PBXGroup;
-			children = (
-				B28A0E3C1A15DE9D003DEB3E /* JsonHttpConnect.swift */,
-			);
-			name = JsonHttpConnect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,12 +438,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28A0E3D1A15DE9D003DEB3E /* JsonHttpConnect.swift in Sources */,
+				B292376B1A1DD3CE003D28ED /* BaseBuinessChannel.swift in Sources */,
+				B29237691A1DCE3A003D28ED /* LogUtil.swift in Sources */,
 				B28A0E321A15B03D003DEB3E /* HttpConnectProtocol.swift in Sources */,
 				B28A0E391A15BF63003DEB3E /* FileHttpConnect.swift in Sources */,
 				B22DA5161A0C74C50013BB17 /* BaseHttpConnect.swift in Sources */,
 				B28312311A161848006C81E0 /* ViewController.swift in Sources */,
 				B28312271A15EB4E006C81E0 /* HttpConnectDelegate.swift in Sources */,
+				B292376D1A1DD459003D28ED /* BuinessChannelProtocol.swift in Sources */,
 				B22DA4DE1A0B6AF90013BB17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

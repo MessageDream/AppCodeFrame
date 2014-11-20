@@ -13,11 +13,17 @@ enum FileOperation:Int{
 }
 
 class FileHttpConnect: BaseHttpConnect {
-    var fileOperation:FileOperation!
+    var fileOperation:FileOperation! = .Download
     var uploadFileName:NSURL?
+    var uploadData: NSData?
     var searchPathDirectory: NSSearchPathDirectory = .DocumentDirectory
     var searchPathDomain: NSSearchPathDomainMask = .UserDomainMask
-    
+    lazy private var downloadFileDestination:Alamofire.Request.DownloadFileDestination = { [unowned self] (temporaryURL, response) -> (NSURL) in
+        if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(self.searchPathDirectory, inDomains: self.searchPathDomain)[0] as? NSURL {
+            return directoryURL.URLByAppendingPathComponent(response.suggestedFilename!)
+        }
+        return temporaryURL
+    }
 //    /* *
 //        以下两个指定构造器是为了隐藏父类的“全部参数”的指定构造器。
 //    */
@@ -29,57 +35,45 @@ class FileHttpConnect: BaseHttpConnect {
 //        super.init(host:host,requestPath:requestPath)
 //    }
     
-     init(scheme:HttpScheme, host:String, requestPath:String,uploadFileName:NSURL? = nil, fileOperation:FileOperation = .Download){
-        if fileOperation == .Download{
-            super.init(scheme:scheme,host:host,requestPath:requestPath)
-        }else{
-            super.init(scheme:scheme,host:host,requestPath:requestPath)
-        }
+     init(scheme:HttpScheme, host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
+        super.init(scheme:scheme,host:host,requestPath:requestPath)
         self.uploadFileName=uploadFileName
-        self.fileOperation = fileOperation
+        self.uploadData=uploadData
+        if uploadFileName != nil || uploadData != nil{
+            self.fileOperation = .Upload
+        }
     }
     
     
-     init(host:String, requestPath:String,uploadFileName:NSURL? = nil,fileOperation:FileOperation = .Download){
-        if fileOperation == .Download{
-            super.init(host:host,requestPath:requestPath)
-        }else{
-            super.init(host:host,requestPath:requestPath)
-        }
+     init(host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
+        super.init(host:host,requestPath:requestPath)
         self.uploadFileName=uploadFileName
-        self.fileOperation = fileOperation
+        self.uploadData=uploadData
+         if uploadFileName != nil || uploadData != nil{
+            self.fileOperation = .Upload
+        }
     }
-    
     
     override func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request{
         if self.fileOperation == .Download {
-            return Alamofire.download(requestConver,Alamofire.Request.suggestedDownloadDestination(directory: searchPathDirectory, domain: searchPathDomain))
+            return Alamofire.download(requestConver,self.downloadFileDestination)
         }
-        return Alamofire.upload(requestConver, uploadFileName!)
+        if let file = self.uploadFileName {
+            return  Alamofire.upload(requestConver, file)
+        }  else if let data = self.uploadData {
+            return Alamofire.upload(requestConver, data)
+        }
+        return super.setRequestByURLRequestConvertible(requestConver)
     }
     
-    override func send(){
-        self.request.progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) in
+    override func handleResponse(response:NSHTTPURLResponse?,anyObject:AnyObject?){
+            self.responsBody=self.downloadFileDestination(NSURL(),response!)
             if let observer = self.delegate {
-                observer.httpConnectResponse(self, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
+                observer.didHttpConnectFinish(self)
             }
-        }.response {
-            (_, response, anyObject, error) in
-            if let er = error {
-                if let observer = self.delegate {
-                    observer.didHttpConnectError(er.code)
-                }
-                return
-            }
-            if let res = response {
-                if let observer = self.delegate {
-                    observer.didGetHttpConnectResponseHead(res.allHeaderFields)
-                }
-            }
-            
-            if let an: AnyObject = anyObject {
-                NSLog("\(an)")
-            }
-        }
+    }
+    
+    deinit{
+        LogUtil.log("deinit ok")
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBAction func download_click(sender: AnyObject) {
-        var fileDo : FileHttpConnect = FileHttpConnect(host:"image16-c.poco.cn", requestPath:"/mypoco/myphoto/20140913/19/4534609120140913190342037_640.jpg?1000x667_120",fileOperation:.Download)
+        var fileDo : FileHttpConnect = FileHttpConnect(host:"localhost:3000", requestPath:"/server.crt")
         fileDo.send()
     }
     
