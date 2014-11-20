@@ -72,8 +72,4 @@ class FileHttpConnect: BaseHttpConnect {
                 observer.didHttpConnectFinish(self)
             }
     }
-    
-    deinit{
-        LogUtil.log("deinit ok")
-    }
 }

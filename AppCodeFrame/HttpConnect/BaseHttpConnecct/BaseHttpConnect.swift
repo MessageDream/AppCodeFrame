@@ -44,14 +44,14 @@ class BaseHttpConnect :HttpConnectProtocol{
             muRequest.HTTPMethod=method.rawValue
         }
         
+        if let observer = self.delegate {
+            observer.httpConnectWillRequest(self)
+        }
+        
         if let heads = self.resquestHeads{
             for item in heads {
                 muRequest.setValue(item.1, forHTTPHeaderField: item.0)
             }
-        }
-        
-        if let observer = self.delegate {
-            observer.httpConnectWillRequest(self)
         }
         
         var convertRequest:NSURLRequest=muRequest;
@@ -93,5 +93,9 @@ class BaseHttpConnect :HttpConnectProtocol{
     
     func cancel(){
         self.request.cancel()
+    }
+    
+    deinit{
+        LogUtil.log("deinit ok")
     }
 }

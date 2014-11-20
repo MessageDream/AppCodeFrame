@@ -77,7 +77,6 @@
 		B28312321A161899006C81E0 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestView.xib; path = ../TestView.xib; sourceTree = "<group>"; };
 		B28A0E311A15B03D003DEB3E /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnectProtocol.swift; path = HttpConnect/HttpConnectProtocol.swift; sourceTree = "<group>"; };
 		B28A0E381A15BF63003DEB3E /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHttpConnect.swift; path = HttpConnect/FileHttpConnect/FileHttpConnect.swift; sourceTree = "<group>"; };
-		B292375A1A1DB67B003D28ED /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B29237681A1DCE3A003D28ED /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = Utils/LogUtil.swift; sourceTree = "<group>"; };
 		B292376A1A1DD3CE003D28ED /* BaseBuinessChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBuinessChannel.swift; path = BusinessChannel/BaseBuinessChannel.swift; sourceTree = "<group>"; };
 		B292376C1A1DD459003D28ED /* BuinessChannelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuinessChannelProtocol.swift; path = BusinessChannel/BuinessChannelProtocol.swift; sourceTree = "<group>"; };
@@ -106,7 +105,6 @@
 		B22DA4CF1A0B6AF80013BB17 = {
 			isa = PBXGroup;
 			children = (
-				B292375A1A1DB67B003D28ED /* CFNetwork.framework */,
 				B22DA4DA1A0B6AF90013BB17 /* AppCodeFrame */,
 				B22DA4F01A0B6AF90013BB17 /* AppCodeFrameTests */,
 				B22DA4D91A0B6AF90013BB17 /* Products */,
