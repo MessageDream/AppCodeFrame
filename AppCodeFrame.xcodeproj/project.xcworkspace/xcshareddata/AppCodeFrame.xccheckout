@@ -5,15 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9EBBB356-78D5-4D6E-84B7-96DF5E4068F0</string>
+	<string>3B4B7D19-799F-433A-9F5F-C8ED80B81C31</string>
 	<key>IDESourceControlProjectName</key>
 	<string>AppCodeFrame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>https://github.com/MessageDream/Alamofire.git</string>
-		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
-		<string>https://github.com/MessageDream/SwiftyJSON.git</string>
 		<key>FA44C840F87ABD6069545B38B039446C692D04C6</key>
 		<string>https://github.com/MessageDream/AppCodeFrame.git</string>
 	</dict>
@@ -21,10 +17,6 @@
 	<string>AppCodeFrame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../..AppCodeFrame/Libraries/Alamofire</string>
-		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
-		<string>../..AppCodeFrame/Libraries/SwiftyJSON</string>
 		<key>FA44C840F87ABD6069545B38B039446C692D04C6</key>
 		<string>../..</string>
 	</dict>
@@ -40,25 +32,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Alamofire</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>FA44C840F87ABD6069545B38B039446C692D04C6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AppCodeFrame</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
-			<key>IDESourceControlWCCName</key>
-			<string>SwiftyJSON</string>
 		</dict>
 	</array>
 </dict>
