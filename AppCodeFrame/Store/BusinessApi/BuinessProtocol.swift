@@ -16,20 +16,12 @@ enum BusinessErrorType:Int{
 }
 
 protocol BuinessProtocol{
-    var businessId: Int?{get}
-//  var businessObserver:BusinessProtocl?
+    var businessDelegate:BusinessDelegate?{get set}
     var businessErrorType: BusinessErrorType{get}
-    var businessHttpConnect: HttpConnectProtocol?{get}
+    var httpConnect: HttpConnectProtocol?{get}
     var businessError:BusinessError?{get}
     
     func execute(param:Dictionary<String,AnyObject>?)
     
-    //取消请求
     func cancel()
-    
-    //解析返回数据
-    func parseBusinessHttpConnectResponseData()->Dictionary<String,AnyObject>?
-    
-    //获取错误码
-    func errorCodeFromResponse(theResponseBody:AnyObject?)
 }

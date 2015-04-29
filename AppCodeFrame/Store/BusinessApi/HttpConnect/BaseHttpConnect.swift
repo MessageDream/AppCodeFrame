@@ -64,6 +64,11 @@ class BaseHttpConnect :HttpConnectProtocol{
         return Alamofire.request(requestConver)
     }
     
+    func sendWithParam(param: Dictionary<String, AnyObject>?) -> Request {
+        self.requestBody = param
+        return self.send()
+    }
+    
     func send() -> Alamofire.Request{
         return  self.request.response {(_, response, anyObject, error) in
             if let er = error {
@@ -80,15 +85,15 @@ class BaseHttpConnect :HttpConnectProtocol{
             }else{
                 return
             }
-            self.handleResponse(response,anyObject: anyObject)
-        }
-    }
-    
-    func handleResponse(response:NSHTTPURLResponse?,anyObject:AnyObject?){
-            self.responsBody=anyObject
+           self.responsBody = self.parseHttpConnectResponseData(response,anyObject: anyObject)
             if let observer = self.delegate {
                 observer.didHttpConnectFinish(self)
             }
+        }
+    }
+    
+    func parseHttpConnectResponseData(response:NSHTTPURLResponse?,anyObject:AnyObject?)->AnyObject?{
+        return anyObject;
     }
     
     func cancel(){

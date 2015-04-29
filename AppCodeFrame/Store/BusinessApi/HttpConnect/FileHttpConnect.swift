@@ -66,10 +66,7 @@ class FileHttpConnect: BaseHttpConnect {
         return super.setRequestByURLRequestConvertible(requestConver)
     }
     
-    override func handleResponse(response:NSHTTPURLResponse?,anyObject:AnyObject?){
-            self.responsBody=self.downloadFileDestination(NSURL(),response!)
-            if let observer = self.delegate {
-                observer.didHttpConnectFinish(self)
-            }
+    override func parseHttpConnectResponseData(response: NSHTTPURLResponse?, anyObject: AnyObject?) -> AnyObject? {
+         return self.downloadFileDestination(NSURL(),response!)
     }
 }

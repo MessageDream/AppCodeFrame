@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		59515F8E2EAA6B25FAD826A1 /* Pods_AppCodeFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6198E45C1C0E4530401F6C /* Pods_AppCodeFrame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B211997F1AF1234F00F4DE67 /* BaseHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211997D1AF1234F00F4DE67 /* BaseHttpConnect.swift */; };
+		B21199801AF1234F00F4DE67 /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211997E1AF1234F00F4DE67 /* FileHttpConnect.swift */; };
+		B21199841AF1246300F4DE67 /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21199831AF1246300F4DE67 /* JsonHttpConnect.swift */; };
+		B21199871AF12F4600F4DE67 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21199861AF12F4600F4DE67 /* BaseModel.swift */; };
+		B21199891AF1311D00F4DE67 /* BusinessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21199881AF1311D00F4DE67 /* BusinessDelegate.swift */; };
+		B211998B1AF137A300F4DE67 /* HttpErrorCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211998A1AF137A300F4DE67 /* HttpErrorCodeManager.swift */; };
 		B2607B201AEFD2440012357D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2607B1F1AEFD2440012357D /* main.m */; };
 		B2607B231AEFD2440012357D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2607B221AEFD2440012357D /* AppDelegate.m */; };
 		B2607B261AEFD2440012357D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2607B251AEFD2440012357D /* ViewController.m */; };
@@ -17,8 +23,6 @@
 		B2607B461AEFD9720012357D /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2607B451AEFD9720012357D /* ReactiveCocoa.framework */; };
 		B2607B551AEFDADB0012357D /* BaseBuiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */; };
 		B2607B561AEFDADB0012357D /* BuinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */; };
-		B2607B571AEFDADB0012357D /* BaseHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B4E1AEFDADB0012357D /* BaseHttpConnect.swift */; };
-		B2607B581AEFDADB0012357D /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B501AEFDADB0012357D /* FileHttpConnect.swift */; };
 		B2607B591AEFDADB0012357D /* HttpConnectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B511AEFDADB0012357D /* HttpConnectDelegate.swift */; };
 		B2607B5A1AEFDADB0012357D /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B521AEFDADB0012357D /* HttpConnectProtocol.swift */; };
 		B2607B5B1AEFDADB0012357D /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B541AEFDADB0012357D /* LogUtil.swift */; };
@@ -39,6 +43,12 @@
 		5E6198E45C1C0E4530401F6C /* Pods_AppCodeFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCodeFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DABF7DCFD45DC8D7AE0E5 /* Pods-AppCodeFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCodeFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppCodeFrame/Pods-AppCodeFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		9DC32BA34AF3E50F2B517EB5 /* Pods-AppCodeFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCodeFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppCodeFrame/Pods-AppCodeFrame.release.xcconfig"; sourceTree = "<group>"; };
+		B211997D1AF1234F00F4DE67 /* BaseHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHttpConnect.swift; sourceTree = "<group>"; };
+		B211997E1AF1234F00F4DE67 /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHttpConnect.swift; sourceTree = "<group>"; };
+		B21199831AF1246300F4DE67 /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHttpConnect.swift; sourceTree = "<group>"; };
+		B21199861AF12F4600F4DE67 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModel.swift; path = Model/BaseModel.swift; sourceTree = "<group>"; };
+		B21199881AF1311D00F4DE67 /* BusinessDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDelegate.swift; sourceTree = "<group>"; };
+		B211998A1AF137A300F4DE67 /* HttpErrorCodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpErrorCodeManager.swift; sourceTree = "<group>"; };
 		B2607B1A1AEFD2440012357D /* AppCodeFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCodeFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2607B1E1AEFD2440012357D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2607B1F1AEFD2440012357D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,8 +64,6 @@
 		B2607B451AEFD9720012357D /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../ReactiveCocoa.framework; sourceTree = "<group>"; };
 		B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBuiness.swift; sourceTree = "<group>"; };
 		B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuinessProtocol.swift; sourceTree = "<group>"; };
-		B2607B4E1AEFDADB0012357D /* BaseHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHttpConnect.swift; sourceTree = "<group>"; };
-		B2607B501AEFDADB0012357D /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHttpConnect.swift; sourceTree = "<group>"; };
 		B2607B511AEFDADB0012357D /* HttpConnectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectDelegate.swift; sourceTree = "<group>"; };
 		B2607B521AEFDADB0012357D /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectProtocol.swift; sourceTree = "<group>"; };
 		B2607B541AEFDADB0012357D /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
@@ -91,6 +99,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B21199851AF12F0300F4DE67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B21199861AF12F4600F4DE67 /* BaseModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B2607B111AEFD2440012357D = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 		B2607B1C1AEFD2440012357D /* AppCodeFrame */ = {
 			isa = PBXGroup;
 			children = (
+				B21199851AF12F0300F4DE67 /* Model */,
 				B2607B211AEFD2440012357D /* AppDelegate.h */,
 				B2607B221AEFD2440012357D /* AppDelegate.m */,
 				B2607B241AEFD2440012357D /* ViewController.h */,
@@ -176,6 +193,7 @@
 			children = (
 				B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */,
 				B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */,
+				B21199881AF1311D00F4DE67 /* BusinessDelegate.swift */,
 				B2607B4C1AEFDADB0012357D /* HttpConnect */,
 			);
 			path = BusinessApi;
@@ -184,28 +202,14 @@
 		B2607B4C1AEFDADB0012357D /* HttpConnect */ = {
 			isa = PBXGroup;
 			children = (
-				B2607B4D1AEFDADB0012357D /* BaseHttpConnecct */,
-				B2607B4F1AEFDADB0012357D /* FileHttpConnect */,
+				B211997D1AF1234F00F4DE67 /* BaseHttpConnect.swift */,
+				B211997E1AF1234F00F4DE67 /* FileHttpConnect.swift */,
+				B21199831AF1246300F4DE67 /* JsonHttpConnect.swift */,
 				B2607B511AEFDADB0012357D /* HttpConnectDelegate.swift */,
 				B2607B521AEFDADB0012357D /* HttpConnectProtocol.swift */,
+				B211998A1AF137A300F4DE67 /* HttpErrorCodeManager.swift */,
 			);
 			path = HttpConnect;
-			sourceTree = "<group>";
-		};
-		B2607B4D1AEFDADB0012357D /* BaseHttpConnecct */ = {
-			isa = PBXGroup;
-			children = (
-				B2607B4E1AEFDADB0012357D /* BaseHttpConnect.swift */,
-			);
-			path = BaseHttpConnecct;
-			sourceTree = "<group>";
-		};
-		B2607B4F1AEFDADB0012357D /* FileHttpConnect */ = {
-			isa = PBXGroup;
-			children = (
-				B2607B501AEFDADB0012357D /* FileHttpConnect.swift */,
-			);
-			path = FileHttpConnect;
 			sourceTree = "<group>";
 		};
 		B2607B531AEFDADB0012357D /* Utils */ = {
@@ -383,14 +387,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2607B581AEFDADB0012357D /* FileHttpConnect.swift in Sources */,
 				B2607B591AEFDADB0012357D /* HttpConnectDelegate.swift in Sources */,
 				B2607B5B1AEFDADB0012357D /* LogUtil.swift in Sources */,
 				B2607B561AEFDADB0012357D /* BuinessProtocol.swift in Sources */,
+				B21199841AF1246300F4DE67 /* JsonHttpConnect.swift in Sources */,
+				B211997F1AF1234F00F4DE67 /* BaseHttpConnect.swift in Sources */,
 				B2607B551AEFDADB0012357D /* BaseBuiness.swift in Sources */,
+				B21199871AF12F4600F4DE67 /* BaseModel.swift in Sources */,
 				B2607B261AEFD2440012357D /* ViewController.m in Sources */,
+				B21199801AF1234F00F4DE67 /* FileHttpConnect.swift in Sources */,
+				B211998B1AF137A300F4DE67 /* HttpErrorCodeManager.swift in Sources */,
+				B21199891AF1311D00F4DE67 /* BusinessDelegate.swift in Sources */,
 				B2607B5A1AEFDADB0012357D /* HttpConnectProtocol.swift in Sources */,
-				B2607B571AEFDADB0012357D /* BaseHttpConnect.swift in Sources */,
 				B2607B231AEFD2440012357D /* AppDelegate.m in Sources */,
 				B2607B201AEFD2440012357D /* main.m in Sources */,
 			);

@@ -10,10 +10,9 @@ import Foundation
 
 class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
     
-    var businessId: Int?
-    //  var businessObserver:BusinessProtocl?
+    var businessDelegate:BusinessDelegate?
     var businessErrorType: BusinessErrorType = .REQUEST_NOERROR
-    var businessHttpConnect: HttpConnectProtocol?
+    var httpConnect: HttpConnectProtocol?
     var businessError:BusinessError?
     
     func execute(param:Dictionary<String,AnyObject>?){
@@ -21,11 +20,19 @@ class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
     }
 
     func cancel(){
-    
+        if let conn = self.httpConnect{
+            conn.cancel()
+        }
     }
     
-    func parseBusinessHttpConnectResponseData()->Dictionary<String,AnyObject>?{
-        return nil
+    func parseModelFromDic(responseBodyDic:Dictionary<String,AnyObject>?) -> BaseModel? {
+        return nil;
+    }
+    
+    func handleBusinessError(){
+        if let delegate = self.businessDelegate {
+           delegate.didBusinessErrorWithCode(self.businessError?.errorCode, andMsg: self.businessError?.errorMsg)
+        }
     }
 
     func errorCodeFromResponse(theResponseBody:AnyObject?){
@@ -48,7 +55,11 @@ class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
     }
     
     func didHttpConnectError(errorCode:Int){
-    
+//        _errCode = errorCode;
+//        _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
+//        if (self.businessDelegate && [self.businessDelegate respondsToSelector:@selector(didBusinessFailWithCode:andMsg:)]){
+//            [self.businessDelegate didBusinessFailWithCode:_errCode andMsg:_errmsg];
+//        }
     }
     
     func didHttpConnectFinish(httpContent:HttpConnectProtocol){
