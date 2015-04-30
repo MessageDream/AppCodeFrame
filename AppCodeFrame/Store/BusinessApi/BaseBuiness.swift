@@ -8,34 +8,45 @@
 
 import Foundation
 
+enum BusinessErrorType:Int{
+    case REQUEST_NOERROR = 0
+}
+
 class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
     
     var businessDelegate:BusinessDelegate?
-    var businessErrorType: BusinessErrorType = .REQUEST_NOERROR
     var httpConnect: HttpConnectProtocol?
     var businessError:BusinessError?
     
-    func execute(param:Dictionary<String,AnyObject>?){
+    private var _resultModel:BaseModel?
+    var resultModel:BaseModel?{
+        return _resultModel
+    }
     
+    func execute(param:Dictionary<String,AnyObject>?){
+        if let par = param{//可能有无参数的情况
+            if !NSJSONSerialization.isValidJSONObject(par) {
+                return
+            }
+        }
+        
+        self.httpConnect?.delegate = self
+        self.httpConnect?.sendWithParam(param)
     }
 
     func cancel(){
-        if let conn = self.httpConnect{
-            conn.cancel()
-        }
+        self.httpConnect?.cancel()
     }
     
-    func parseModelFromDic(responseBodyDic:Dictionary<String,AnyObject>?) -> BaseModel? {
-        return nil;
+    func parseModelFromDic(responseBodyDic:Dictionary<String,AnyObject>) -> BaseModel? {
+        return nil
     }
     
     func handleBusinessError(){
-        if let delegate = self.businessDelegate {
-           delegate.didBusinessErrorWithCode(self.businessError?.errorCode, andMsg: self.businessError?.errorMsg)
-        }
+        self.businessDelegate?.didBusinessError(self.businessError!)
     }
 
-    func errorCodeFromResponse(theResponseBody:AnyObject?){
+    func errorCodeFromResponse(theResponseBody:Dictionary<String,AnyObject>){
     
     }
     
@@ -55,14 +66,20 @@ class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
     }
     
     func didHttpConnectError(errorCode:Int){
-//        _errCode = errorCode;
-//        _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
-//        if (self.businessDelegate && [self.businessDelegate respondsToSelector:@selector(didBusinessFailWithCode:andMsg:)]){
-//            [self.businessDelegate didBusinessFailWithCode:_errCode andMsg:_errmsg];
-//        }
+        let errcode =  HttpErrorCode.fromValue(errorCode)
+        self.businessError = BusinessError(errorCode:errcode.rawValue,errorMsg:errcode.description)
+        self.businessDelegate?.didBusinessFail(self.businessError!)
     }
     
     func didHttpConnectFinish(httpContent:HttpConnectProtocol){
-    
+        if let bodyDic = httpContent.responsBody as? Dictionary<String,AnyObject>{
+            self.errorCodeFromResponse(bodyDic)
+            if let error = self.businessError{
+                self.handleBusinessError()
+                return
+            }
+            _resultModel = self.parseModelFromDic(bodyDic)
+            self.businessDelegate?.didBusinessSuccessWithModel(_resultModel)
+        }
     }
 }

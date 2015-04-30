@@ -7,8 +7,7 @@ use_frameworks!
 xcodeproj 'AppCodeFrame'
 target 'AppCodeFrame', :exclusive => true do
   pod 'Alamofire', '~> 1.2'
-  pod "SwiftyJSON", "~> 2.2"
-  pod 'Dollar'
+  pod 'JSONHelper'
 end
 
 

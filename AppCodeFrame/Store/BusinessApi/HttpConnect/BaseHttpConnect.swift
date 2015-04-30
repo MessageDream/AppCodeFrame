@@ -23,9 +23,7 @@ class BaseHttpConnect :HttpConnectProtocol{
     
     var request: Alamofire.Request!  {
         return self.setRequestByURLRequestConvertible(self.wrapRequest()).progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) in
-            if let observer = self.delegate {
-                observer.httpConnectResponse(self, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
-            }
+            self.delegate?.httpConnectResponse(self, bytesSentOrReceived: bytesSentOrReceived, totalBytesSentOrReceived: totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived: totalBytesExpectedToSendOrReceived)
         }
     }
     
@@ -33,7 +31,7 @@ class BaseHttpConnect :HttpConnectProtocol{
         self.scheme=scheme
         self.host=host
         self.requestPath=requestPath
-        self.resquestMethod=resquestMethod;
+        self.resquestMethod=resquestMethod
         self.encoding=encoding
     }
     
@@ -43,10 +41,8 @@ class BaseHttpConnect :HttpConnectProtocol{
         if let method = self.resquestMethod {
             muRequest.HTTPMethod=method.rawValue
         }
-        
-        if let observer = self.delegate {
-            observer.httpConnectWillRequest(self)
-        }
+
+        self.delegate?.httpConnectWillRequest(self)
         
         if let heads = self.resquestHeads{
             for item in heads {
@@ -54,7 +50,7 @@ class BaseHttpConnect :HttpConnectProtocol{
             }
         }
         
-        var convertRequest:NSURLRequest=muRequest;
+        var convertRequest:NSURLRequest=muRequest
         (convertRequest, _) = self.encoding.encode(convertRequest, parameters: self.requestBody)
         
         return convertRequest
@@ -73,34 +69,24 @@ class BaseHttpConnect :HttpConnectProtocol{
         return  self.request.response {(_, response, anyObject, error) in
             if let er = error {
                 self.errCode=er.code
-                if let observer = self.delegate {
-                    observer.didHttpConnectError(er.code)
-                }
+                self.delegate?.didHttpConnectError(er.code)
                 return
             }
             if let res = response {
-                if let observer = self.delegate {
-                    observer.didGetHttpConnectResponseHeads(res.allHeaderFields)
-                }
+                self.delegate?.didGetHttpConnectResponseHeads(res.allHeaderFields)
             }else{
                 return
             }
            self.responsBody = self.parseHttpConnectResponseData(response,anyObject: anyObject)
-            if let observer = self.delegate {
-                observer.didHttpConnectFinish(self)
-            }
+           self.delegate?.didHttpConnectFinish(self)
         }
     }
     
     func parseHttpConnectResponseData(response:NSHTTPURLResponse?,anyObject:AnyObject?)->AnyObject?{
-        return anyObject;
+        return anyObject
     }
     
     func cancel(){
         self.request.cancel()
-    }
-    
-    deinit{
-        LogUtil.log("deinit ok")
     }
 }

@@ -20,13 +20,15 @@
 		B2607B291AEFD2440012357D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2607B271AEFD2440012357D /* Main.storyboard */; };
 		B2607B2E1AEFD2440012357D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2607B2C1AEFD2440012357D /* LaunchScreen.xib */; };
 		B2607B3A1AEFD2440012357D /* AppCodeFrameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2607B391AEFD2440012357D /* AppCodeFrameTests.m */; };
-		B2607B461AEFD9720012357D /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2607B451AEFD9720012357D /* ReactiveCocoa.framework */; };
 		B2607B551AEFDADB0012357D /* BaseBuiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */; };
 		B2607B561AEFDADB0012357D /* BuinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */; };
 		B2607B591AEFDADB0012357D /* HttpConnectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B511AEFDADB0012357D /* HttpConnectDelegate.swift */; };
 		B2607B5A1AEFDADB0012357D /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B521AEFDADB0012357D /* HttpConnectProtocol.swift */; };
-		B2607B5B1AEFDADB0012357D /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2607B541AEFDADB0012357D /* LogUtil.swift */; };
 		B2607B5E1AEFDB300012357D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2607B5D1AEFDB300012357D /* Images.xcassets */; };
+		B272B4B11AF20E2B0036852F /* BusinessRacProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B4B01AF20E2B0036852F /* BusinessRacProtocol.swift */; };
+		B272B4B31AF20FFE0036852F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B272B4B21AF20FFE0036852F /* ReactiveCocoa.framework */; };
+		B272B4B51AF218310036852F /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B272B4B41AF218310036852F /* LlamaKit.framework */; };
+		B272B4B71AF219340036852F /* BaseBusinessRacExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B4B61AF219340036852F /* BaseBusinessRacExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +63,15 @@
 		B2607B331AEFD2440012357D /* AppCodeFrameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCodeFrameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2607B381AEFD2440012357D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2607B391AEFD2440012357D /* AppCodeFrameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCodeFrameTests.m; sourceTree = "<group>"; };
-		B2607B451AEFD9720012357D /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../ReactiveCocoa.framework; sourceTree = "<group>"; };
 		B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBuiness.swift; sourceTree = "<group>"; };
 		B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuinessProtocol.swift; sourceTree = "<group>"; };
 		B2607B511AEFDADB0012357D /* HttpConnectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectDelegate.swift; sourceTree = "<group>"; };
 		B2607B521AEFDADB0012357D /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectProtocol.swift; sourceTree = "<group>"; };
-		B2607B541AEFDADB0012357D /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
 		B2607B5D1AEFDB300012357D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B272B4B01AF20E2B0036852F /* BusinessRacProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessRacProtocol.swift; sourceTree = "<group>"; };
+		B272B4B21AF20FFE0036852F /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
+		B272B4B41AF218310036852F /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = SOURCE_ROOT; };
+		B272B4B61AF219340036852F /* BaseBusinessRacExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusinessRacExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2607B461AEFD9720012357D /* ReactiveCocoa.framework in Frameworks */,
 				59515F8E2EAA6B25FAD826A1 /* Pods_AppCodeFrame.framework in Frameworks */,
+				B272B4B31AF20FFE0036852F /* ReactiveCocoa.framework in Frameworks */,
+				B272B4B51AF218310036852F /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +154,8 @@
 		B2607B1D1AEFD2440012357D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B2607B451AEFD9720012357D /* ReactiveCocoa.framework */,
+				B272B4B41AF218310036852F /* LlamaKit.framework */,
+				B272B4B21AF20FFE0036852F /* ReactiveCocoa.framework */,
 				B2607B1E1AEFD2440012357D /* Info.plist */,
 				B2607B1F1AEFD2440012357D /* main.m */,
 			);
@@ -194,6 +200,8 @@
 				B2607B4A1AEFDADB0012357D /* BaseBuiness.swift */,
 				B2607B4B1AEFDADB0012357D /* BuinessProtocol.swift */,
 				B21199881AF1311D00F4DE67 /* BusinessDelegate.swift */,
+				B272B4B01AF20E2B0036852F /* BusinessRacProtocol.swift */,
+				B272B4B61AF219340036852F /* BaseBusinessRacExtension.swift */,
 				B2607B4C1AEFDADB0012357D /* HttpConnect */,
 			);
 			path = BusinessApi;
@@ -215,7 +223,6 @@
 		B2607B531AEFDADB0012357D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B2607B541AEFDADB0012357D /* LogUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -388,7 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2607B591AEFDADB0012357D /* HttpConnectDelegate.swift in Sources */,
-				B2607B5B1AEFDADB0012357D /* LogUtil.swift in Sources */,
+				B272B4B71AF219340036852F /* BaseBusinessRacExtension.swift in Sources */,
 				B2607B561AEFDADB0012357D /* BuinessProtocol.swift in Sources */,
 				B21199841AF1246300F4DE67 /* JsonHttpConnect.swift in Sources */,
 				B211997F1AF1234F00F4DE67 /* BaseHttpConnect.swift in Sources */,
@@ -396,6 +403,7 @@
 				B21199871AF12F4600F4DE67 /* BaseModel.swift in Sources */,
 				B2607B261AEFD2440012357D /* ViewController.m in Sources */,
 				B21199801AF1234F00F4DE67 /* FileHttpConnect.swift in Sources */,
+				B272B4B11AF20E2B0036852F /* BusinessRacProtocol.swift in Sources */,
 				B211998B1AF137A300F4DE67 /* HttpErrorCodeManager.swift in Sources */,
 				B21199891AF1311D00F4DE67 /* BusinessDelegate.swift in Sources */,
 				B2607B5A1AEFDADB0012357D /* HttpConnectProtocol.swift in Sources */,

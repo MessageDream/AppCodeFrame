@@ -7,7 +7,7 @@
 //
 
 protocol BusinessDelegate{
-    func didBusinessSuccessWithModel(model:BaseModel)
-    func didBusinessFailWithCode(code:Int?,andMsg msg:String?)
-    func didBusinessErrorWithCode(code:Int?, andMsg msg:String?)
+    func didBusinessSuccessWithModel(model:BaseModel?)
+    func didBusinessFail(fail:BusinessError)
+    func didBusinessError(error:BusinessError)
 }

@@ -6,21 +6,19 @@
 //  Copyright (c) 2014 jayden. All rights reserved.
 //
 
-struct BusinessError {
+struct BusinessError:Printable {
     var errorCode: Int
     var errorMsg: String
-}
-
-enum BusinessErrorType:Int{
-    case REQUEST_NOERROR = 0
+    var description:String{
+        return self.errorMsg
+    }
 }
 
 protocol BuinessProtocol{
     var businessDelegate:BusinessDelegate?{get set}
-    var businessErrorType: BusinessErrorType{get}
     var httpConnect: HttpConnectProtocol?{get}
     var businessError:BusinessError?{get}
-    
+    var resultModel:BaseModel?{get}
     func execute(param:Dictionary<String,AnyObject>?)
     
     func cancel()
