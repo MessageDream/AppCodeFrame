@@ -53,6 +53,14 @@ class FileHttpConnect: BaseHttpConnect {
             self.fileOperation = .Upload
         }
     }
+
+     required init(scheme: HttpScheme, host: String, requestPath: String, resquestMethod: Alamofire.Method?, encoding: Alamofire.ParameterEncoding) {
+         super.init(scheme: scheme, host: host, requestPath: requestPath, resquestMethod: resquestMethod, encoding: encoding)
+     }
+
+     required init() {
+         super.init()
+     }
     
     override func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request{
         if self.fileOperation == .Download {

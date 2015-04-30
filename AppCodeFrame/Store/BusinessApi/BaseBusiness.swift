@@ -7,20 +7,25 @@
 //
 
 import Foundation
+import Alamofire
 
 enum BusinessErrorType:Int{
     case REQUEST_NOERROR = 0
 }
 
-class BaseBuiness:BuinessProtocol,HttpConnectDelegate {
-    
+class BaseBusiness<T:HttpConnectProtocol>:BuinessProtocol,HttpConnectDelegate {
+    typealias Element = T
     var businessDelegate:BusinessDelegate?
-    var httpConnect: HttpConnectProtocol?
+    var httpConnect: Element?
     var businessError:BusinessError?
     
     private var _resultModel:BaseModel?
     var resultModel:BaseModel?{
         return _resultModel
+    }
+    
+    init(){
+        self.httpConnect = Element()
     }
     
     func execute(param:Dictionary<String,AnyObject>?){

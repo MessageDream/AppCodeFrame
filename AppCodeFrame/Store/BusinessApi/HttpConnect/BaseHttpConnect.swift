@@ -9,9 +9,9 @@
 import Alamofire
 
 class BaseHttpConnect :HttpConnectProtocol{
-    var scheme:HttpScheme!
+    var scheme:HttpScheme = .HTTP
     var host:String!
-    var requestPath:String!
+    var requestPath:String = ""
     var resquestHeads:Dictionary<String,String>?
     var requestBody:Dictionary<String,AnyObject>?
     var responsBody:AnyObject?
@@ -27,7 +27,11 @@ class BaseHttpConnect :HttpConnectProtocol{
         }
     }
     
-    init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
+    required init(){
+    
+    }
+    
+    required init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
         self.scheme=scheme
         self.host=host
         self.requestPath=requestPath
