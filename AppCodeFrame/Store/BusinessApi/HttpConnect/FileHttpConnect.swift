@@ -12,7 +12,7 @@ enum FileOperation:Int{
     case Download = 1
 }
 
-class FileHttpConnect: BaseHttpConnect {
+class FileHttpConnect: BaseHttpConnect{
     var fileOperation:FileOperation! = .Download
     var uploadFileName:NSURL?
     var uploadData: NSData?
@@ -24,43 +24,39 @@ class FileHttpConnect: BaseHttpConnect {
         }
         return temporaryURL
     }
-//    /* *
-//        以下两个指定构造器是为了隐藏父类的“全部参数”的指定构造器。
-//    */
-//    private init(scheme:HttpScheme, host:String, requestPath:String){
-//        super.init(scheme:scheme,host:host,requestPath:requestPath)
-//    }
-//    
-//    private init(host:String, requestPath:String){
-//        super.init(host:host,requestPath:requestPath)
-//    }
+    //    /* *
+    //        以下两个指定构造器是为了隐藏父类的“全部参数”的指定构造器。
+    //    */
+    //    private init(scheme:HttpScheme, host:String, requestPath:String){
+    //        super.init(scheme:scheme,host:host,requestPath:requestPath)
+    //    }
+    //
+    //    private init(host:String, requestPath:String){
+    //        super.init(host:host,requestPath:requestPath)
+    //    }
     
-     init(scheme:HttpScheme, host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
-        super.init(scheme:scheme,host:host,requestPath:requestPath)
+    init(scheme:HttpScheme, host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
         self.uploadFileName=uploadFileName
         self.uploadData=uploadData
         if uploadFileName != nil || uploadData != nil{
             self.fileOperation = .Upload
         }
+        super.init(scheme:scheme,host:host,requestPath:requestPath)
     }
     
-    
-     init(host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
-        super.init(host:host,requestPath:requestPath)
+    init(host:String, requestPath:String,uploadFileName:NSURL? = nil,uploadData:NSData? = nil){
         self.uploadFileName=uploadFileName
         self.uploadData=uploadData
-         if uploadFileName != nil || uploadData != nil{
+        if uploadFileName != nil || uploadData != nil{
             self.fileOperation = .Upload
         }
+        super.init(host:host,requestPath:requestPath)
     }
-
-     required init(scheme: HttpScheme, host: String, requestPath: String, resquestMethod: Alamofire.Method?, encoding: Alamofire.ParameterEncoding) {
-         super.init(scheme: scheme, host: host, requestPath: requestPath, resquestMethod: resquestMethod, encoding: encoding)
-     }
-
-     required init() {
-         super.init()
-     }
+    
+    
+    required init() {
+        super.init()
+    }
     
     override func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request{
         if self.fileOperation == .Download {
@@ -75,6 +71,6 @@ class FileHttpConnect: BaseHttpConnect {
     }
     
     override func parseHttpConnectResponseData(response: NSHTTPURLResponse?, anyObject: AnyObject?) -> AnyObject? {
-         return self.downloadFileDestination(NSURL(),response!)
+        return self.downloadFileDestination(NSURL(),response!)
     }
 }

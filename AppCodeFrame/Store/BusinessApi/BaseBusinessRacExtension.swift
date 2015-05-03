@@ -8,7 +8,19 @@
 
 import ReactiveCocoa
 
-//extension BaseBuiness:BusinessRacProtocol{
+extension BaseBusiness:BusinessRacProtocol{
+    var rac_isActiveSignal: RACSignal{
+     return RACSignal.createSignal({ (RACSubscriber) -> RACDisposable! in
+        return RACDisposable(block: { () -> Void in
+            
+        })
+     })
+    }
+    
+     private func signal() -> RACSignal?{
+       let errProperty = MutableProperty(self.businessError)
+//    return errProperty.producer.start(next: (BusinessError? -> ())?, error: <#(NoError -> ())?##NoError -> ()#>, completed: <#(() -> ())?##() -> ()#>, interrupted: <#(() -> ())?##() -> ()#>)
+//    }
 //    func rac_isActiveSignal() -> RACSignal? {
 //        return nil
 ////        RACSignal *didHttpConnectError = [[self rac_signalForSelector:@selector(didHttpConnectError:)
@@ -53,4 +65,4 @@ import ReactiveCocoa
 ////        return signal;
 //
 //    }
-//}
+}

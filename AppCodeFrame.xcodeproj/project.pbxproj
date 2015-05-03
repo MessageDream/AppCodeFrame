@@ -17,19 +17,19 @@
 		B2CCCBCE1AF2289600E448B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CCCBBE1AF2289600E448B2 /* Images.xcassets */; };
 		B2CCCBCF1AF2289600E448B2 /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC11AF2289600E448B2 /* BaseBusiness.swift */; };
 		B2CCCBD01AF2289600E448B2 /* BaseBusinessRacExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC21AF2289600E448B2 /* BaseBusinessRacExtension.swift */; };
-		B2CCCBD11AF2289600E448B2 /* BuinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC31AF2289600E448B2 /* BuinessProtocol.swift */; };
+		B2CCCBD11AF2289600E448B2 /* BusinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC31AF2289600E448B2 /* BusinessProtocol.swift */; };
 		B2CCCBD21AF2289600E448B2 /* BusinessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC41AF2289600E448B2 /* BusinessDelegate.swift */; };
 		B2CCCBD31AF2289600E448B2 /* BusinessRacProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC51AF2289600E448B2 /* BusinessRacProtocol.swift */; };
 		B2CCCBD41AF2289600E448B2 /* BaseHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC71AF2289600E448B2 /* BaseHttpConnect.swift */; };
 		B2CCCBD51AF2289600E448B2 /* FileHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC81AF2289600E448B2 /* FileHttpConnect.swift */; };
 		B2CCCBD61AF2289600E448B2 /* HttpConnectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC91AF2289600E448B2 /* HttpConnectDelegate.swift */; };
 		B2CCCBD71AF2289600E448B2 /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBCA1AF2289600E448B2 /* HttpConnectProtocol.swift */; };
-		B2CCCBD81AF2289600E448B2 /* HttpErrorCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBCB1AF2289600E448B2 /* HttpErrorCodeManager.swift */; };
 		B2CCCBD91AF2289600E448B2 /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBCC1AF2289600E448B2 /* JsonHttpConnect.swift */; };
 		B2CCCBDC1AF228E600E448B2 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CCCBDA1AF228E600E448B2 /* LlamaKit.framework */; };
 		B2CCCBDD1AF228E600E448B2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CCCBDB1AF228E600E448B2 /* ReactiveCocoa.framework */; };
 		B2CCCBE01AF23E5200E448B2 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBDF1AF23E5200E448B2 /* LogUtil.swift */; };
 		B2CCCBE21AF240D200E448B2 /* UserLoginBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */; };
+		B2F6FB521AF26D4A0055E213 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6FB511AF26D4A0055E213 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,19 +58,19 @@
 		B2CCCBBE1AF2289600E448B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2CCCBC11AF2289600E448B2 /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusiness.swift; sourceTree = "<group>"; };
 		B2CCCBC21AF2289600E448B2 /* BaseBusinessRacExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusinessRacExtension.swift; sourceTree = "<group>"; };
-		B2CCCBC31AF2289600E448B2 /* BuinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuinessProtocol.swift; sourceTree = "<group>"; };
+		B2CCCBC31AF2289600E448B2 /* BusinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessProtocol.swift; sourceTree = "<group>"; };
 		B2CCCBC41AF2289600E448B2 /* BusinessDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDelegate.swift; sourceTree = "<group>"; };
 		B2CCCBC51AF2289600E448B2 /* BusinessRacProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessRacProtocol.swift; sourceTree = "<group>"; };
 		B2CCCBC71AF2289600E448B2 /* BaseHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHttpConnect.swift; sourceTree = "<group>"; };
 		B2CCCBC81AF2289600E448B2 /* FileHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHttpConnect.swift; sourceTree = "<group>"; };
 		B2CCCBC91AF2289600E448B2 /* HttpConnectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectDelegate.swift; sourceTree = "<group>"; };
 		B2CCCBCA1AF2289600E448B2 /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectProtocol.swift; sourceTree = "<group>"; };
-		B2CCCBCB1AF2289600E448B2 /* HttpErrorCodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpErrorCodeManager.swift; sourceTree = "<group>"; };
 		B2CCCBCC1AF2289600E448B2 /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHttpConnect.swift; sourceTree = "<group>"; };
 		B2CCCBDA1AF228E600E448B2 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = SOURCE_ROOT; };
 		B2CCCBDB1AF228E600E448B2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		B2CCCBDF1AF23E5200E448B2 /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = Utils/LogUtil.swift; sourceTree = "<group>"; };
 		B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginBusiness.swift; sourceTree = "<group>"; };
+		B2F6FB511AF26D4A0055E213 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ViewModel/BaseViewModel.swift; sourceTree = "<group>"; };
 		E9F241D6E0025A0802326458 /* Pods-AppCodeFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCodeFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppCodeFrame/Pods-AppCodeFrame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +131,7 @@
 				B2CCCB9D1AF227D700E448B2 /* ViewController.swift */,
 				B2CCCB9F1AF227D800E448B2 /* Main.storyboard */,
 				B2CCCBA41AF227D800E448B2 /* LaunchScreen.xib */,
+				B2F6FB4E1AF26CFE0055E213 /* ViewModel */,
 				B2CCCBBB1AF2289600E448B2 /* Model */,
 				B2CCCBBF1AF2289600E448B2 /* Store */,
 				B2CCCBDE1AF23E1100E448B2 /* Utils */,
@@ -194,13 +195,13 @@
 		B2CCCBC01AF2289600E448B2 /* BusinessApi */ = {
 			isa = PBXGroup;
 			children = (
+				B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */,
 				B2CCCBC11AF2289600E448B2 /* BaseBusiness.swift */,
 				B2CCCBC21AF2289600E448B2 /* BaseBusinessRacExtension.swift */,
-				B2CCCBC31AF2289600E448B2 /* BuinessProtocol.swift */,
+				B2CCCBC31AF2289600E448B2 /* BusinessProtocol.swift */,
 				B2CCCBC41AF2289600E448B2 /* BusinessDelegate.swift */,
 				B2CCCBC51AF2289600E448B2 /* BusinessRacProtocol.swift */,
 				B2CCCBC61AF2289600E448B2 /* HttpConnect */,
-				B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */,
 			);
 			path = BusinessApi;
 			sourceTree = "<group>";
@@ -212,7 +213,6 @@
 				B2CCCBC81AF2289600E448B2 /* FileHttpConnect.swift */,
 				B2CCCBC91AF2289600E448B2 /* HttpConnectDelegate.swift */,
 				B2CCCBCA1AF2289600E448B2 /* HttpConnectProtocol.swift */,
-				B2CCCBCB1AF2289600E448B2 /* HttpErrorCodeManager.swift */,
 				B2CCCBCC1AF2289600E448B2 /* JsonHttpConnect.swift */,
 			);
 			path = HttpConnect;
@@ -224,6 +224,14 @@
 				B2CCCBDF1AF23E5200E448B2 /* LogUtil.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		B2F6FB4E1AF26CFE0055E213 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6FB511AF26D4A0055E213 /* BaseViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		BA58F9BD6A56CB1CBCDD90E6 /* Frameworks */ = {
@@ -387,14 +395,14 @@
 			files = (
 				B2CCCBD31AF2289600E448B2 /* BusinessRacProtocol.swift in Sources */,
 				B2CCCBCF1AF2289600E448B2 /* BaseBusiness.swift in Sources */,
-				B2CCCBD11AF2289600E448B2 /* BuinessProtocol.swift in Sources */,
+				B2CCCBD11AF2289600E448B2 /* BusinessProtocol.swift in Sources */,
 				B2CCCBD41AF2289600E448B2 /* BaseHttpConnect.swift in Sources */,
 				B2CCCBD01AF2289600E448B2 /* BaseBusinessRacExtension.swift in Sources */,
+				B2F6FB521AF26D4A0055E213 /* BaseViewModel.swift in Sources */,
 				B2CCCBCD1AF2289600E448B2 /* BaseModel.swift in Sources */,
 				B2CCCBE21AF240D200E448B2 /* UserLoginBusiness.swift in Sources */,
 				B2CCCBD51AF2289600E448B2 /* FileHttpConnect.swift in Sources */,
 				B2CCCBE01AF23E5200E448B2 /* LogUtil.swift in Sources */,
-				B2CCCBD81AF2289600E448B2 /* HttpErrorCodeManager.swift in Sources */,
 				B2CCCBD21AF2289600E448B2 /* BusinessDelegate.swift in Sources */,
 				B2CCCBD71AF2289600E448B2 /* HttpConnectProtocol.swift in Sources */,
 				B2CCCB9E1AF227D700E448B2 /* ViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Alamofire
 
-class JsonHttpConnect: BaseHttpConnect {
+class JsonHttpConnect: BaseHttpConnect{
     
     private func createBaseBussinessHeads(){
         if let head = self.resquestHeads{
@@ -16,6 +16,14 @@ class JsonHttpConnect: BaseHttpConnect {
         }else{
             self.resquestHeads = [HTTPHeadContentType:HTTPContentType.Json.rawValue]
         }
+    }
+    
+    required init() {
+        super.init()
+    }
+    
+    init(host:String, requestPath:String,resquestMethod:Alamofire.Method? = .GET){
+        super.init(host: host, requestPath: requestPath, resquestMethod: resquestMethod)
     }
     
     override func parseHttpConnectResponseData(response: NSHTTPURLResponse?, anyObject: AnyObject?) -> AnyObject? {

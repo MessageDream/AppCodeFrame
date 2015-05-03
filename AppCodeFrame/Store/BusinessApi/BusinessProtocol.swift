@@ -14,10 +14,9 @@ struct BusinessError:Printable {
     }
 }
 
-protocol BuinessProtocol{
-    typealias Element
-    var businessDelegate:BusinessDelegate?{get set}
-    var httpConnect: Element?{get}
+protocol BusinessProtocol:class{
+    weak var businessDelegate:BusinessDelegate?{get set}
+    var httpConnect: HttpConnectProtocol?{get}
     var businessError:BusinessError?{get}
     var resultModel:BaseModel?{get}
     func execute(param:Dictionary<String,AnyObject>?)

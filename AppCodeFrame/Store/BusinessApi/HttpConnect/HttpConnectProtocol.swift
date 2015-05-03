@@ -52,10 +52,10 @@ enum HttpErrorCode:Int,Printable{
     }
 }
 
-protocol HttpConnectProtocol {
+protocol HttpConnectProtocol :class{
     var scheme:HttpScheme{get set}
     var host:String!{get set}
-    var requestPath:String{get set}
+    var requestPath:String!{get set}
     var resquestHeads:Dictionary<String,String>?{get set}
     var requestBody:Dictionary<String,AnyObject>?{get set}
     var responsBody:AnyObject?{get}
@@ -63,13 +63,11 @@ protocol HttpConnectProtocol {
     var encoding:Alamofire.ParameterEncoding!{get}
     var timeOut:NSTimeInterval{get set}
     var errCode:Int{get set}
-    var delegate:HttpConnectDelegate?{set get}
+    weak var delegate:HttpConnectDelegate?{set get}
     
     var request: Alamofire.Request! {get}
     
     init()
-    
-    init(scheme:HttpScheme, host:String,  requestPath:String,  resquestMethod:Alamofire.Method?, encoding:Alamofire.ParameterEncoding)
     
     func setRequestByURLRequestConvertible(requestConver:Alamofire.URLRequestConvertible)->Alamofire.Request
     func sendWithParam(param:Dictionary<String,AnyObject>?) -> Alamofire.Request

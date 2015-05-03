@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-class UserLoginBusiness<T>:BaseBusiness<JsonHttpConnect> {
+class UserLoginBusiness:BaseBusiness {
     override init() {
-       
+        super.init()
+        self.httpConnect = JsonHttpConnect(host: "", requestPath: "", resquestMethod: .GET)
     }
 }

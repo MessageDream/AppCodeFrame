@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HttpConnectDelegate{   
+protocol HttpConnectDelegate:class{
     func httpConnectWillRequest(httpContent:HttpConnectProtocol)
     func didGetHttpConnectResponseHeads(allHeads:Dictionary<NSObject,AnyObject>)
     func httpConnectResponse(httpContent:HttpConnectProtocol,bytesSentOrReceived:Int64, totalBytesSentOrReceived:Int64, totalBytesExpectedToSendOrReceived:Int64)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-protocol BusinessDelegate{
+protocol BusinessDelegate:class{
     func didBusinessSuccessWithModel(model:BaseModel?)
     func didBusinessFail(fail:BusinessError)
     func didBusinessError(error:BusinessError)

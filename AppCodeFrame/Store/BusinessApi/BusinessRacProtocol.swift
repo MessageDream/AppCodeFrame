@@ -8,6 +8,6 @@
 
 import ReactiveCocoa
 
-protocol BusinessRacProtocol{
-    func rac_isActiveSignal() -> RACSignal
+protocol BusinessRacProtocol:class{
+    var rac_isActiveSignal: RACSignal{get}
 }

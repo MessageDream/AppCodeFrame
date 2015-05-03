@@ -11,7 +11,7 @@ import Alamofire
 class BaseHttpConnect :HttpConnectProtocol{
     var scheme:HttpScheme = .HTTP
     var host:String!
-    var requestPath:String = ""
+    var requestPath:String!
     var resquestHeads:Dictionary<String,String>?
     var requestBody:Dictionary<String,AnyObject>?
     var responsBody:AnyObject?
@@ -19,7 +19,7 @@ class BaseHttpConnect :HttpConnectProtocol{
     var encoding:Alamofire.ParameterEncoding!
     var timeOut:NSTimeInterval = 30.0
     var errCode:Int = 0
-    var delegate:HttpConnectDelegate?
+    weak var delegate:HttpConnectDelegate?
     
     var request: Alamofire.Request!  {
         return self.setRequestByURLRequestConvertible(self.wrapRequest()).progress{ (bytesSentOrReceived, totalBytesSentOrReceived, totalBytesExpectedToSendOrReceived) in
@@ -28,10 +28,11 @@ class BaseHttpConnect :HttpConnectProtocol{
     }
     
     required init(){
-    
+        self.host = ""
+        self.requestPath = ""
     }
     
-    required init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
+     init(scheme:HttpScheme = .HTTP, host:String,  requestPath:String,  resquestMethod:Alamofire.Method? = .GET,  encoding:Alamofire.ParameterEncoding = .URL){
         self.scheme=scheme
         self.host=host
         self.requestPath=requestPath

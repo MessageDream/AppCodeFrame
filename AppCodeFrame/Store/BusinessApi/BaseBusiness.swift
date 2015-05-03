@@ -13,10 +13,9 @@ enum BusinessErrorType:Int{
     case REQUEST_NOERROR = 0
 }
 
-class BaseBusiness<T:HttpConnectProtocol>:BuinessProtocol,HttpConnectDelegate {
-    typealias Element = T
+class BaseBusiness:BusinessProtocol,HttpConnectDelegate {
     var businessDelegate:BusinessDelegate?
-    var httpConnect: Element?
+    var httpConnect: HttpConnectProtocol?
     var businessError:BusinessError?
     
     private var _resultModel:BaseModel?
@@ -25,7 +24,6 @@ class BaseBusiness<T:HttpConnectProtocol>:BuinessProtocol,HttpConnectDelegate {
     }
     
     init(){
-        self.httpConnect = Element()
     }
     
     func execute(param:Dictionary<String,AnyObject>?){
