@@ -1,0 +1,6 @@
+github "robrix/Box" "a2c22dd706732fff0a6022ef97951dd9c744837e"
+github "Quick/Nimble" "1229a4c33367527b8104de5022bef91558f46438"
+github "Quick/Quick" "682bb956a5bbd3ea7217208ec2a79f78dbab0697"
+github "jspahrsummers/xcconfigs" "813127f87f66fa14a7da03d3fa8410c02d2075d6"
+github "antitypical/Result" "f7917f4fa4608acbb9c53e8d1c272be2e78cae81"
+github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.2"
