@@ -17,9 +17,8 @@ extension BaseBusiness:BusinessRacProtocol{
      })
     }
     
-     private func signal() -> RACSignal?{
-       let errProperty = MutableProperty(self.businessError)
-//    return errProperty.producer.start(next: (BusinessError? -> ())?, error: <#(NoError -> ())?##NoError -> ()#>, completed: <#(() -> ())?##() -> ()#>, interrupted: <#(() -> ())?##() -> ()#>)
+//     private func signal() -> RACSignal?{
+//       let errProperty = MutableProperty(self.businessError)
 //    }
 //    func rac_isActiveSignal() -> RACSignal? {
 //        return nil

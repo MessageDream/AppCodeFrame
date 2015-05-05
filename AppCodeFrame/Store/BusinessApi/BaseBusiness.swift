@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ReactiveCocoa
 
 enum BusinessErrorType:Int{
     case REQUEST_NOERROR = 0
@@ -16,14 +17,20 @@ enum BusinessErrorType:Int{
 class BaseBusiness:BusinessProtocol,HttpConnectDelegate {
     var businessDelegate:BusinessDelegate?
     var httpConnect: HttpConnectProtocol?
-    var businessError:BusinessError?
     
-    private var _resultModel:BaseModel?
-    var resultModel:BaseModel?{
-        return _resultModel
+    private var _businessError:MutableProperty<BusinessError?>
+    var businessError:PropertyOf<BusinessError?>{
+        return PropertyOf(_businessError)
+    }
+    
+    private var _resultModel:MutableProperty<BaseModel?>
+    var resultModel:PropertyOf<BaseModel?>{
+        return PropertyOf(_resultModel)
     }
     
     init(){
+       _resultModel = MutableProperty(nil)
+       _businessError = MutableProperty(nil)
     }
     
     func execute(param:Dictionary<String,AnyObject>?){
@@ -46,7 +53,7 @@ class BaseBusiness:BusinessProtocol,HttpConnectDelegate {
     }
     
     func handleBusinessError(){
-        self.businessDelegate?.didBusinessError(self.businessError!)
+        self.businessDelegate?.didBusinessError(self.businessError.value!)
     }
 
     func errorCodeFromResponse(theResponseBody:Dictionary<String,AnyObject>){
@@ -70,19 +77,19 @@ class BaseBusiness:BusinessProtocol,HttpConnectDelegate {
     
     func didHttpConnectError(errorCode:Int){
         let errcode =  HttpErrorCode.fromValue(errorCode)
-        self.businessError = BusinessError(errorCode:errcode.rawValue,errorMsg:errcode.description)
-        self.businessDelegate?.didBusinessFail(self.businessError!)
+        _businessError = MutableProperty(BusinessError(errorCode:errcode.rawValue,errorMsg:errcode.description))
+        self.businessDelegate?.didBusinessFail(self.businessError.value!)
     }
     
     func didHttpConnectFinish(httpContent:HttpConnectProtocol){
         if let bodyDic = httpContent.responsBody as? Dictionary<String,AnyObject>{
             self.errorCodeFromResponse(bodyDic)
-            if let error = self.businessError{
+            if let error = self.businessError.value{
                 self.handleBusinessError()
                 return
             }
-            _resultModel = self.parseModelFromDic(bodyDic)
-            self.businessDelegate?.didBusinessSuccessWithModel(_resultModel)
+            _resultModel = MutableProperty(self.parseModelFromDic(bodyDic))
+            self.businessDelegate?.didBusinessSuccessWithModel(_resultModel.value)
         }
     }
 }

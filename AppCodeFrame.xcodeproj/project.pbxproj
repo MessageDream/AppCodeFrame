@@ -25,8 +25,6 @@
 		B2CCCBD61AF2289600E448B2 /* HttpConnectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBC91AF2289600E448B2 /* HttpConnectDelegate.swift */; };
 		B2CCCBD71AF2289600E448B2 /* HttpConnectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBCA1AF2289600E448B2 /* HttpConnectProtocol.swift */; };
 		B2CCCBD91AF2289600E448B2 /* JsonHttpConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBCC1AF2289600E448B2 /* JsonHttpConnect.swift */; };
-		B2CCCBDC1AF228E600E448B2 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CCCBDA1AF228E600E448B2 /* LlamaKit.framework */; };
-		B2CCCBDD1AF228E600E448B2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CCCBDB1AF228E600E448B2 /* ReactiveCocoa.framework */; };
 		B2CCCBE01AF23E5200E448B2 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBDF1AF23E5200E448B2 /* LogUtil.swift */; };
 		B2CCCBE21AF240D200E448B2 /* UserLoginBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */; };
 		B2F6FB521AF26D4A0055E213 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6FB511AF26D4A0055E213 /* BaseViewModel.swift */; };
@@ -66,10 +64,10 @@
 		B2CCCBC91AF2289600E448B2 /* HttpConnectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectDelegate.swift; sourceTree = "<group>"; };
 		B2CCCBCA1AF2289600E448B2 /* HttpConnectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectProtocol.swift; sourceTree = "<group>"; };
 		B2CCCBCC1AF2289600E448B2 /* JsonHttpConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHttpConnect.swift; sourceTree = "<group>"; };
-		B2CCCBDA1AF228E600E448B2 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = SOURCE_ROOT; };
-		B2CCCBDB1AF228E600E448B2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		B2CCCBDF1AF23E5200E448B2 /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = Utils/LogUtil.swift; sourceTree = "<group>"; };
 		B2CCCBE11AF240D200E448B2 /* UserLoginBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginBusiness.swift; sourceTree = "<group>"; };
+		B2E4A2E41AF909CF0065D859 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = "<group>"; };
+		B2E4A2E51AF909CF0065D859 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		B2F6FB511AF26D4A0055E213 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ViewModel/BaseViewModel.swift; sourceTree = "<group>"; };
 		E9F241D6E0025A0802326458 /* Pods-AppCodeFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCodeFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppCodeFrame/Pods-AppCodeFrame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2503F89910EE36A07BB3369C /* Pods_AppCodeFrame.framework in Frameworks */,
-				B2CCCBDD1AF228E600E448B2 /* ReactiveCocoa.framework in Frameworks */,
-				B2CCCBDC1AF228E600E448B2 /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +140,6 @@
 		B2CCCB991AF227D700E448B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B2CCCBDA1AF228E600E448B2 /* LlamaKit.framework */,
-				B2CCCBDB1AF228E600E448B2 /* ReactiveCocoa.framework */,
 				B2CCCB9A1AF227D700E448B2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -237,6 +231,8 @@
 		BA58F9BD6A56CB1CBCDD90E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2E4A2E41AF909CF0065D859 /* LlamaKit.framework */,
+				B2E4A2E51AF909CF0065D859 /* ReactiveCocoa.framework */,
 				58ACF3D6EE18E6EAD3BF1CC8 /* Pods_AppCodeFrame.framework */,
 			);
 			name = Frameworks;
